@@ -22,12 +22,16 @@
   </div>
 
   <script>
+    var addZero =function(value) {
+      if (value < 10) {
+        value = '0' + value;
+      }
+      return value;
+    }
+
     var now = new Date();
     var seconds = now.getSeconds(); //を取得
-
-    if (seconds < 10) {
-      seconds = '0' + seconds;
-    }
+    seconds = addZero(seconds);
 
     var minutes = now.getMinutes();
     if (minutes < 10) {
