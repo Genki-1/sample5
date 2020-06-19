@@ -22,29 +22,17 @@
   </div>
 
   <script>
-    var addZero =function(value) {
-      if (value < 10) {
-        value = '0' + value;
-      }
+    document.getElementById('start_stop').addEventListener('click', function() {
+      var start = new Date();
 
-      return value;
+      setInterval(goTimer, 10);
+    });
+
+    var goTimer = function() {
+      var now = new Date();
+      document.getElementById('timer').innerHTML = now.getTime();
     }
 
-    document.getElementById('start_stop').addEventListener('click', function() {
-
-
-      var now = new Date();
-      var seconds = now.getSeconds(); //を取得
-      seconds = addZero(seconds);
-
-      var minutes = now.getMinutes();
-      minutes = addZero(minutes);
-
-      var hours = now.getHours();
-      hours = addZero(hours);
-
-      document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
-    });
   </script>
 </body>
 </html>
