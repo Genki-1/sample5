@@ -30,17 +30,21 @@
       return value;
     }
 
-    var now = new Date();
-    var seconds = now.getSeconds(); //を取得
-    seconds = addZero(seconds);
+    document.getElementById('start_stop').addEventListener('click', function() {
 
-    var minutes = now.getMinutes();
-    minutes = addZero(minutes);
 
-    var hours = now.getHours();
-    hours = addZero(hours);
+      var now = new Date();
+      var seconds = now.getSeconds(); //を取得
+      seconds = addZero(seconds);
 
-    document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+      var minutes = now.getMinutes();
+      minutes = addZero(minutes);
+
+      var hours = now.getHours();
+      hours = addZero(hours);
+
+      document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+    });
   </script>
 </body>
 </html>
